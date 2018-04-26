@@ -21,7 +21,7 @@ def trainer():
         b = random.randint(1, 10)
 
         while True:
-            erg = int(input(str(a) + "*" + str(b) + "="))
+            erg = int(input(str(x+1) + ". " + str(a) + "*" + str(b) + "="))
             if (erg == a * b):
                 output(True)
                 break
