@@ -1,3 +1,10 @@
+#####################
+#   Aufgabe 1,12.4.3#
+#   v1.0            #
+#   baehll          #
+#   02.05.2018      #
+#####################
+
 import pickle
 from musical import *
 
@@ -7,6 +14,7 @@ class Manager:
     ------------------
     (n)eue Vorstellung
     (U)eberblick Vorstellungen
+    (S)torniere Vorstellung
     (E)nde
     """
 
@@ -24,9 +32,16 @@ class Manager:
                 self.__neueVorstellung()
             elif wahl in ["u", "U"]:
                 print(self.__musical)
+            elif wahl in ["s", "S"]:
+                self.__storniere()
             print(self.__menuetext)
         print("Danke für die Benutzung vom Musical-Manager")
         self.__speichern()
+
+    def __storniere(self):
+        datum = input("Datum der Vorstellung: ")
+        text = self.__musical.storniere(datum)
+        print(text)
 
     def __neueVorstellung(self):
         datum = input("Termin: ")
